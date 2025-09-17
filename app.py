@@ -1,7 +1,7 @@
-from flask import Flask, render_template
+from fastapi import FastAPI
 
-app = Flask(__name__)
+app = FastAPI()
 
-@app.route("/")
-def index():
-    return render_template("index.html")
+@app.get("/")
+def home():
+    return {"message": "Hello from Railway!"}
